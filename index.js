@@ -1,28 +1,32 @@
-//if we need to host,type this
+// 1. Import required modules
+const JSONServer = require('json-server');
+const cors = require('cors');
 
-//1.import json server
-const JSONServer=require('json-server')
+// 2. Create server
+const rBuilder = JSONServer.create();
 
-//2.create server for running json file
-const rBuilder=JSONServer.create()
+// 3. Create middleware
+const middleware = JSONServer.defaults();
 
-//3.create middleware
-const middleware=JSONServer.defaults()
+// 4. Import db.json file
+const router = JSONServer.router('db.json');
 
-//6.import db.json file
-const router=JSONServer.router("db.json")
+// 5. Define port
+const PORT = process.env.PORT || 3000;
 
-//4.define port to run the server
-const PORT=3000||process.env.PORT
+// 6. Enable CORS (important!)
+rBuilder.use(cors({
+  origin: ['https://memory-vault-official.vercel.app'], // your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
 
-//5.use middleware
-rBuilder.use(middleware)
+// 7. Use middleware
+rBuilder.use(middleware);
 
-//7.use router
-rBuilder.use(router)
+// 8. Use router
+rBuilder.use(router);
 
-//8.tell server to listen for client request
-rBuilder.listen(PORT,()=>{
-    console.log(`Resume Builder started at PORT number ${PORT}`);
-    
-})
+// 9. Start server
+rBuilder.listen(PORT, () => {
+  console.log(`MemoryVault JSON Server started at PORT number ${PORT}`);
+});
