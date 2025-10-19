@@ -1,0 +1,18 @@
+{
+  "capsules": [
+    {
+      "title": "Dream",
+      "description": "I have a Dream",
+      "mediaLink": "https://static.vecteezy.com/system/resources/previews/009/571/995/non_2x/woman-having-a-daydream-and-thinking-illustration-vector.jpg",
+      "unlockDate": "2025-10-02",
+      "id": "1"
+    },
+    {
+      "title": "After 5 years",
+      "description": "After 5 years",
+      "mediaLink": "https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?cs=srgb&dl=clouds-cloudy-conifers-247478.jpg&fm=jpg",
+      "unlockDate": "2025-10-07",
+      "id": "cK510hP"
+    }
+  ]
+}
