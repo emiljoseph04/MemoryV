@@ -16,9 +16,13 @@ const PORT = process.env.PORT || 3000;
 
 // 6. Enable CORS (important!)
 rBuilder.use(cors({
-  origin: ['https://memory-vault-official.vercel.app'], // your frontend URL
+  origin: [
+    'https://memory-vault-official.vercel.app', // production
+    'http://localhost:5173' // local development
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
+
 
 // 7. Use middleware
 rBuilder.use(middleware);
